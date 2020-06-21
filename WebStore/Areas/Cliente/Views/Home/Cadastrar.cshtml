@@ -1,0 +1,82 @@
+﻿@model Cliente
+
+<form method="post" asp-area="Cliente" asp-controller="Home" asp-action="Cadastrar">
+
+    <div class="form-group">
+        <label asp-for="PrimeiroNome"></label>
+        <div class="col-md-5">
+            <input asp-for="PrimeiroNome" type="text" class="form-control" />
+            <span asp-validation-for="PrimeiroNome" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UltimoNome"></label>
+        <div class="col-md-5">
+            <input asp-for="UltimoNome" type="text" class="form-control" />
+            <span asp-validation-for="UltimoNome" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Endereco"></label>
+        <div class="col-md-5">
+            <input asp-for="Endereco" type="text" class="form-control" />
+            <span asp-validation-for="Endereco" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cidade"></label>
+        <div class="col-md-5">
+            <input asp-for="Cidade" type="text" class="form-control" />
+            <span asp-validation-for="Cidade" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Estado"></label>
+        <div class="col-md-5">
+            <input asp-for="Estado" type="text" class="form-control" />
+            <span asp-validation-for="Estado" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CEP"></label>
+        <div class="col-md-5">
+            <input asp-for="CEP" type="text" class="form-control" />
+            <span asp-validation-for="CEP" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefone"></label>
+        <div class="col-md-5">
+            <input asp-for="Telefone" type="text" class="form-control" />
+            <span asp-validation-for="Telefone" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <div class="col-md-5">
+            <input asp-for="Email" type="text" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Senha"></label>
+        <div class="col-md-5">
+            <input asp-for="Senha" type="text" class="form-control" />
+            <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Cadastrar" />
+        </div>
+    </div>
+</form>

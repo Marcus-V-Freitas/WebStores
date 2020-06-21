@@ -1,0 +1,43 @@
+﻿@model CarrinhoComprasViewModel
+
+<h2>Shopping Cart: All your candy you love</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Selected Amout</th>
+            <th>Candy</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CarrinhoCompras.ItensCarrinho)
+        {
+            <tr>
+                <td class="text-left">
+                    <a asp-controller="CarrinhoCompras" asp-action="AdicionarNoCarrinho"
+                       asp-route-Id="@item.Produto.ID">+</a>
+                    <a asp-controller="CarrinhoCompras" asp-action="RemoverNoCarrinho"
+                       asp-route-Id="@item.Produto.ID">-</a>
+                </td>
+                <td class="text-center">@item.Quantidade</td>
+                <td class="text-left">@item.Produto.Nome</td>
+                <td class="text-right">@item.Produto.Preço.ToString("c")</td>
+                <td class="text-right">@((item.Quantidade * item.Produto.Preço).ToString("c"))</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total</td>
+            <td class="text-right">@Model.TotalCompra.ToString("c")</td>
+        </tr>
+    </tfoot>
+
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="CarrinhoCompras" asp-action="LimparCarrinho">Clear Cart</a>
+    <a class="btn btn-primary" asp-controller="Venda" asp-action="CheckOut">CheckOut</a>
+</div>

@@ -1,0 +1,26 @@
+﻿@model Cliente
+
+
+
+@if (Model != null)
+{
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            Seja Bem Vindo, @Model.PrimeiroNome !
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a asp-area="Cliente" asp-controller="Home" asp-action="Logout">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </li>
+}
+else
+{
+    <li>
+        <a asp-area="Cliente" asp-controller="Home" asp-action="Login">Login</a>
+    </li>
+}

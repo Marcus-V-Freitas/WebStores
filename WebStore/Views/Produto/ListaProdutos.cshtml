@@ -1,0 +1,9 @@
+﻿@model ProdutoViewModel
+
+<h1>@Model.CategoriaAtual</h1>
+@foreach (var produto in Model.Produtos)
+{
+    <partial name="_CarrinhoCompras" model="produto" />
+}
+
+
